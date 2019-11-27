@@ -1,0 +1,23 @@
+
+      <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
+
+        <div class="form-group">
+          <label>Key word:</label>
+          <input type="text" name="keyword" ngModel [(ngModel)]="keyword">
+          <button type="submit">
+            Search
+          </button>
+        </div>
+      </form>
+      <div class="md-padding" ng-controller="BasicDemoCtrl as ctrl">
+
+        <div class="demo-md-panel-content" *ngFor="let book of books.items">
+        <h1> {{book.volumeInfo.title}}</h1>
+         <h4> {{book.volumeInfo.description}}</h4>
+         <p>  <img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" /></p>
+
+        <button mat-button (click)="openDialog()">Open detail</button>
+
+</div>
+      </div>
+
